@@ -1,11 +1,10 @@
 // composables/useApi.ts
-import type { UseMutationOptions, UseQueryOptions } from '@tanstack/vue-query'
-import { useMutation, useQuery } from '@tanstack/vue-query'
-import axios from 'axios'
+import type { UseMutationOptions, UseQueryOptions } from '@tanstack/vue-query';
+import { useMutation, useQuery } from '@tanstack/vue-query';
+import axios from 'axios';
 
-// Axios 实例
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL || '',
+  baseURL:import.meta.env.PUBLIC_SERVER_URL || '',
   timeout: 10000,
 })
 
