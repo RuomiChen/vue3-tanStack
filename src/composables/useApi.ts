@@ -1,5 +1,5 @@
-import type { UseQueryOptions } from '@tanstack/vue-query'
-import { useQuery } from '@tanstack/vue-query'
+import type { UseMutationOptions, UseQueryOptions } from '@tanstack/vue-query'
+import { useMutation, useQuery } from '@tanstack/vue-query'
 import axios from 'axios'
 
 const api = axios.create({
@@ -32,6 +32,26 @@ export function useApiQuery<T = any>(
     queryKey: Array.isArray(key) ? key : [key],
     queryFn: async () => {
       const res = await api.get<T>(url)
+      return res.data
+    },
+    ...options,
+  })
+}
+
+/**
+ * 上传文件 Mutation 封装
+ * @param url 接口路径
+ * @param options Vue Query mutation 配置
+ */
+export function useApiUpload<T = any>(
+  url: string,
+  options?: UseMutationOptions<T, any, FormData>
+) {
+  return useMutation<T, any, FormData>({
+    mutationFn: async (formData: FormData) => {
+      const res = await api.post<T>(url, formData, {
+        headers: { 'Content-Type': 'multipart/form-data' },
+      })
       return res.data
     },
     ...options,
