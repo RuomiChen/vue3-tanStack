@@ -17,6 +17,8 @@
   "devDependencies": {
     "@rsbuild/core": "^1.5.14",
     "@rsbuild/plugin-vue": "^1.1.2",
+    "@tailwindcss/postcss": "^4.1.16",
+    "tailwindcss": "^4.1.16",
     "typescript": "^5.9.3"
   }
 }
