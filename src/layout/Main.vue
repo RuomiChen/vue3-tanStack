@@ -25,7 +25,7 @@
     <a-layout>
       <!-- Header -->
       <a-layout-header
-        class="!bg-white flex items-center justify-between !px-8 border-b border-gray-200 shadow-sm"
+        class="bg-white! flex items-center justify-between px-8! border-b border-gray-200 shadow-sm"
         style="height: 64px;"
       >
         <!-- Left: menu toggle -->
