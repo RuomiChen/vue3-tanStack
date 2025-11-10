@@ -1,13 +1,10 @@
-<script setup lang="ts">
-import { useApiQuery } from './composables/useApi';
-
-const { data, isLoading, error } = useApiQuery('todo', '/api/home/all')
-</script>
 <template>
-  <div class="content">
-   {{ data }}
-  </div>
+  <!-- 使用 v-model:collapsed 双向绑定 -->
+   <!-- <Main/> -->
+    <router-view/>
 </template>
 
-<style scoped>
-</style>
+<script lang="ts" setup>
+
+
+</script>

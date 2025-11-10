@@ -9,10 +9,15 @@
     "preview": "rsbuild preview"
   },
   "dependencies": {
+    "@ant-design/icons-vue": "^7.0.1",
     "@tanstack/vue-query": "^5.90.5",
     "@tanstack/vue-query-devtools": "^5.91.0",
+    "ant-design-vue": "~4.2.6",
     "axios": "^1.12.2",
-    "vue": "^3.5.22"
+    "echarts": "^6.0.0",
+    "vue": "^3.5.22",
+    "vue-echarts": "^8.0.1",
+    "vue-router": "^4.6.3"
   },
   "devDependencies": {
     "@rsbuild/core": "^1.5.14",
