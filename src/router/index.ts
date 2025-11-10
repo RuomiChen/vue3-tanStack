@@ -4,6 +4,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import Main from '../layout/Main.vue'
 import Account from '../pages/Account.vue'
 import Dashboard from '../pages/Dashboard/Index.vue'
+import { toast } from '../utils/toast'
 
 const routes = [
   {
@@ -11,6 +12,7 @@ const routes = [
     name: 'Main',
     component: Main,
     redirect: '/dashboard', // 默认重定向到仪表盘
+    meta:{requiresAuth:true},
     children: [
       {
         path: 'dashboard',
@@ -40,7 +42,7 @@ const routes = [
         name: 'InventoryProduct',
         component: () => import('../pages/Inventory/Products.vue'),
         meta: { title: '库存管理', icon: 'AppstoreOutlined' }
-      },{
+      }, {
         path: 'inventory/records',
         name: 'InventoryRecord',
         component: () => import('../pages/Inventory/Record.vue'),
@@ -60,7 +62,30 @@ const routes = [
   }
 ]
 
-export const router = createRouter({
+const router = createRouter({
   history: createWebHashHistory(),
   routes
 })
+// 全局前置守卫
+router.beforeEach((to, _from, next) => {
+  // const tokenStore = useTokenStore()
+  const token = localStorage.getItem('token')
+  // if (to.meta.requiresAuth && !tokenStore.token) {
+  if (to.meta.requiresAuth && !token) {
+    // 未登录，跳到登录页
+    toast.error('please login first', { duration: 5 })
+    next({ path: "/account", query: { redirect: to.fullPath } })
+  } else {
+    next()
+  }
+})
+
+// router.afterEach((to, from) => {
+//   logPageView({
+//     from: from,
+//     to: to,
+//   })
+// })
+
+export default router
+

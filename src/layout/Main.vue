@@ -58,7 +58,7 @@
                 <a-menu-item key="0">Profile</a-menu-item>
                 <a-menu-item key="1">Settings</a-menu-item>
                 <a-menu-divider />
-                <a-menu-item key="3">Logout</a-menu-item>
+                <a-menu-item key="3" @click="logout">Logout</a-menu-item>
               </a-menu>
             </template>
           </a-dropdown>
@@ -78,16 +78,16 @@
 
 <script lang="ts" setup>
 import {
-    AppstoreAddOutlined,
-    DesktopOutlined,
-    MailOutlined,
-    MenuFoldOutlined,
-    MenuUnfoldOutlined,
-    PieChartOutlined
+  AppstoreAddOutlined,
+  DesktopOutlined,
+  MailOutlined,
+  MenuFoldOutlined,
+  MenuUnfoldOutlined,
+  PieChartOutlined
 } from '@ant-design/icons-vue';
 import { h, ref } from 'vue';
 import SidebarMenu from '../components/SidebarMenu.vue';
-import { router } from '../router';
+import router from '../router';
 
 const collapsed = ref(false);
 
@@ -113,4 +113,9 @@ const items = [
     ],
   },
 ];
+
+const logout = () =>{
+  localStorage.removeItem('token')
+  router.push({name:'Account'})
+}
 </script>

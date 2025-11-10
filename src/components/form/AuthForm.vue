@@ -25,13 +25,14 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue';
-import { router } from '../../router';
+import router from '../../router';
 import LoginForm from './LoginForm.vue';
 import RegisterForm from './RegisterForm.vue';
 
 const activeTab = ref<'login' | 'register'>('login');
 
 const handleLogin = (values: any) => {
+    localStorage.setItem('token','true')
     router.push({name:'Dashboard'})
     console.log('Login values:', values);
 };

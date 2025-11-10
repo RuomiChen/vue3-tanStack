@@ -15,7 +15,7 @@
 
 <script lang="ts" setup>
 import { defineEmits, defineProps, ref, watch } from 'vue';
-import { router } from '../router';
+import router from '../router';
 
 const props = defineProps<{
   items: any[];           // 菜单项数据

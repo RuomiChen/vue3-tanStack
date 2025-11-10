@@ -5,6 +5,6 @@ import App from './App.vue';
 import './index.css';
 // Vue Query
 import 'ant-design-vue/dist/reset.css';
-import { router } from './router';
+import router from './router';
 // 挂载 app
 createApp(App).use(Antd).use(router).mount('#root')
