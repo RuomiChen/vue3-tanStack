@@ -29,7 +29,7 @@
         class="!bg-white flex items-center justify-between !px-8 border-b border-gray-200 shadow-sm"
         style="height: 64px;"
       >
-        <!-- 左侧菜单按钮 + 标题 -->
+        <!-- Left: menu toggle -->
         <div class="flex items-center gap-3">
           <menu-unfold-outlined
             v-if="collapsed"
@@ -43,10 +43,10 @@
           />
         </div>
 
-        <!-- 右侧操作区 -->
+        <!-- Right: actions -->
         <div class="flex items-center gap-4">
           <a-button type="primary" size="small" @click="router.push({ name: 'Account' })">
-            登录
+            Login
           </a-button>
 
           <a-dropdown>
@@ -55,10 +55,10 @@
             </a-avatar>
             <template #overlay>
               <a-menu>
-                <a-menu-item key="0">个人中心</a-menu-item>
-                <a-menu-item key="1">系统设置</a-menu-item>
+                <a-menu-item key="0">Profile</a-menu-item>
+                <a-menu-item key="1">Settings</a-menu-item>
                 <a-menu-divider />
-                <a-menu-item key="3">退出登录</a-menu-item>
+                <a-menu-item key="3">Logout</a-menu-item>
               </a-menu>
             </template>
           </a-dropdown>
@@ -92,24 +92,24 @@ import { router } from '../router';
 const collapsed = ref(false);
 
 const items = [
-  { key: '1', icon: () => h(PieChartOutlined), label: '控制面板', path: '/dashboard' },
-  { key: '2', icon: () => h(DesktopOutlined), label: '用户管理', path: '/users' },
+  { key: '1', icon: () => h(PieChartOutlined), label: 'Dashboard', path: '/dashboard' },
+  { key: '2', icon: () => h(DesktopOutlined), label: 'User Management', path: '/users' },
   {
     key: 'sub1',
     icon: () => h(MailOutlined),
-    label: '订单管理',
+    label: 'Order Management',
     children: [
-      { key: '5', label: '全部订单', path: '/orders/all' },
-      { key: '6', label: '待发货订单', path: '/orders/pending' },
+      { key: '5', label: 'All Orders', path: '/orders/all' },
+      { key: '6', label: 'Pending Orders', path: '/orders/pending' },
     ],
   },
   {
     key: 'sub2',
     icon: () => h(AppstoreAddOutlined),
-    label: '库存管理',
+    label: 'Inventory Management',
     children: [
-      { key: '9', label: '商品列表', path: '/inventory/products' },
-      { key: '10', label: '出入库记录', path: '/inventory/records' },
+      { key: '9', label: 'Product List', path: '/inventory/products' },
+      { key: '10', label: 'Stock Records', path: '/inventory/records' },
     ],
   },
 ];

@@ -36,9 +36,14 @@ const routes = [
         meta: { title: '订单管理', icon: 'ShoppingCartOutlined' }
       },
       {
-        path: 'inventory',
-        name: 'Inventory',
+        path: 'inventory/products',
+        name: 'InventoryProduct',
         component: () => import('../pages/Inventory/Products.vue'),
+        meta: { title: '库存管理', icon: 'AppstoreOutlined' }
+      },{
+        path: 'inventory/records',
+        name: 'InventoryRecord',
+        component: () => import('../pages/Inventory/Record.vue'),
         meta: { title: '库存管理', icon: 'AppstoreOutlined' }
       }
     ]

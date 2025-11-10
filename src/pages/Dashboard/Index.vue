@@ -1,21 +1,21 @@
 <template>
   <div class="space-y-6">
-    <h2 class="text-2xl font-semibold text-gray-700">控制面板</h2>
+    <h2 class="text-2xl font-semibold text-gray-700">Dashboard</h2>
 
     <!-- 顶部数据卡片 -->
     <a-row gutter="16">
       <a-col :span="8">
-        <a-card title="今日订单" bordered>
+        <a-card title="Today Order" bordered>
           <h3 class="text-2xl font-bold">120</h3>
         </a-card>
       </a-col>
       <a-col :span="8">
-        <a-card title="销售额" bordered>
+        <a-card title="Sales" bordered>
           <h3 class="text-2xl font-bold">¥58,000</h3>
         </a-card>
       </a-col>
       <a-col :span="8">
-        <a-card title="待发货" bordered>
+        <a-card title="Pending" bordered>
           <h3 class="text-2xl font-bold">23</h3>
         </a-card>
       </a-col>
@@ -25,14 +25,14 @@
     <a-row gutter="16">
       <!-- 今日订单柱状图 -->
       <a-col :span="12">
-        <a-card title="最近7天订单量">
+        <a-card title="Recent">
           <v-chart :option="orderOption" style="height:300px;"></v-chart>
         </a-card>
       </a-col>
 
       <!-- 销售额折线图 -->
       <a-col :span="12">
-        <a-card title="最近7天销售额">
+        <a-card title="Recent Sales">
           <v-chart :option="salesOption" style="height:300px;"></v-chart>
         </a-card>
       </a-col>
@@ -53,7 +53,7 @@ const orderOption = {
   tooltip: {},
   xAxis: {
     type: 'category',
-    data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
+    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
   },
   yAxis: { type: 'value' },
   series: [
@@ -69,7 +69,7 @@ const salesOption = {
   tooltip: {},
   xAxis: {
     type: 'category',
-    data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
+    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
   },
   yAxis: { type: 'value' },
   series: [

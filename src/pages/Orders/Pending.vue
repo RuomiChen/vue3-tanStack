@@ -1,11 +1,11 @@
 <template>
     <div>
-        <h2 class="text-2xl font-semibold mb-4 text-gray-700">待发货订单</h2>
+        <h2 class="text-2xl font-semibold mb-4 text-gray-700">Pending Orders</h2>
 
-        <!-- 操作按钮 -->
+        <!-- Action buttons -->
         <div class="mb-4 flex gap-2">
-            <a-button type="primary" @click="refreshData">刷新</a-button>
-            <a-button type="default" @click="batchShip">批量发货</a-button>
+            <a-button type="primary" @click="refreshData">Refresh</a-button>
+            <a-button type="default" @click="batchShip">Batch Ship</a-button>
         </div>
 
         <a-table :columns="columns" :dataSource="orders" rowKey="id" bordered>
@@ -15,7 +15,7 @@
 
             <template #action="{ record }">
                 <a-button size="small" type="primary" @click="shipOrder(record.id)">
-                    发货
+                    Ship
                 </a-button>
             </template>
         </a-table>
@@ -33,33 +33,33 @@ interface Order {
 }
 
 const orders = ref<Order[]>([
-    { id: 'ORD101', customer: '张三', amount: 1200, status: '待发货' },
-    { id: 'ORD102', customer: '李四', amount: 850, status: '待发货' },
-    { id: 'ORD103', customer: '王五', amount: 300, status: '待发货' },
+    { id: 'ORD101', customer: 'Zhang San', amount: 1200, status: 'Pending' },
+    { id: 'ORD102', customer: 'Zhang San 2', amount: 850, status: 'Pending' },
+    { id: 'ORD103', customer: 'Zhang San 3', amount: 300, status: 'Pending' },
 ])
 
 const columns = [
-  { title: '订单号', dataIndex: 'id', key: 'id' },
-  { title: '客户', dataIndex: 'customer', key: 'customer' },
-  { title: '金额', dataIndex: 'amount', key: 'amount' },
-  { title: '状态', key: 'status' },
-  { title: '操作', key: 'action' },
+  { title: 'Order ID', dataIndex: 'id', key: 'id' },
+  { title: 'Customer', dataIndex: 'customer', key: 'customer' },
+  { title: 'Price', dataIndex: 'amount', key: 'amount' },
+  { title: 'Status', key: 'status' },
+  { title: 'Action', key: 'action' },
 ]
 
-// 模拟操作
+// Simulated actions
 function refreshData() {
-    console.log('刷新数据...')
+    console.log('Refreshing data...')
 }
 
 function batchShip() {
-    console.log('批量发货...')
+    console.log('Batch shipping orders...')
 }
 
 function shipOrder(id: string) {
-    console.log('发货订单', id)
+    console.log('Shipping order', id)
 }
 </script>
 
 <style scoped>
-/* 可根据需要自定义表格样式 */
+/* Customize table styles if needed */
 </style>
