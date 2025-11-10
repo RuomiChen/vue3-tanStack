@@ -11,7 +11,6 @@
       <!-- Logo -->
       <div class="flex items-center justify-center h-16 bg-[#001529] text-white text-xl font-semibold tracking-wide">
         <img
-          v-if="!collapsed"
           class="h-8 mr-2"
           src="../../public/logo.png"
         />
