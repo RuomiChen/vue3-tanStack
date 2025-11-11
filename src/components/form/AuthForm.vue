@@ -1,7 +1,9 @@
 <template>
     <div class="mt-30 max-w-md w-full h-full mx-auto p-6 bg-white rounded-lg shadow-md">
         <!-- Tabs -->
-        <h1 class="text-4xl font-bold text-gray-800 text-center mb-6 tracking-wide">MistMirror ERP</h1>
+        <h1 class="text-3xl font-extrabold text-orange-700 text-center mb-6 tracking-wide uppercase">
+            MistMirror ERP
+        </h1>
         <div class="flex mb-6 border-b border-gray-200">
             <button class=" cursor-pointer flex-1 py-2 text-center font-medium"
                 :class="activeTab === 'login' ? 'border-b-2 border-blue-500 text-blue-500' : 'text-gray-500'"
@@ -32,8 +34,8 @@ import RegisterForm from './RegisterForm.vue';
 const activeTab = ref<'login' | 'register'>('login');
 
 const handleLogin = (values: any) => {
-    localStorage.setItem('token','true')
-    router.push({name:'Dashboard'})
+    localStorage.setItem('token', 'true')
+    router.push({ name: 'Dashboard' })
     console.log('Login values:', values);
 };
 

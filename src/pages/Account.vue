@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full min-h-screen flex justify-center bg-gradient-to-r from-indigo-200 via-red-200 to-yellow-100">
+  <div class="w-full min-h-screen flex justify-center bg-[radial-gradient(ellipse_at_top,#b45309,#fdba74,#9f1239)] from-amber-700 via-orange-300 to-rose-800">
     <AuthForm/>
   </div>
 </template>
