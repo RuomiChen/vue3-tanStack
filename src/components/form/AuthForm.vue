@@ -1,17 +1,17 @@
 <template>
-    <div class="mt-30 max-w-xl w-full h-full mx-auto p-6 bg-white rounded-lg shadow-md">
+    <div class="mt-30 max-w-xl w-full mx-auto p-6 bg-white rounded-lg shadow-md">
         <!-- Tabs -->
         <h1 class="text-3xl font-extrabold text-orange-500 text-center mb-6 tracking-wide uppercase">
             MistMirror ERP
         </h1>
         <div class="flex mb-6 border-b border-gray-200">
             <button class=" cursor-pointer flex-1 py-2 text-center font-medium"
-                :class="activeTab === 'login' ? 'border-b-2 border-blue-500 text-blue-500' : 'text-gray-500'"
+                :class="activeTab === 'login' ? 'border-b-2 border-orange-500 text-orange-500' : 'text-gray-500'"
                 @click="activeTab = 'login'">
                 Login
             </button>
             <button class=" cursor-pointer flex-1 py-2 text-center font-medium"
-                :class="activeTab === 'register' ? 'border-b-2 border-blue-500 text-blue-500' : 'text-gray-500'"
+                :class="activeTab === 'register' ? 'border-b-2 border-orange-500 text-orange-500' : 'text-gray-500'"
                 @click="activeTab = 'register'">
                 Register
             </button>
