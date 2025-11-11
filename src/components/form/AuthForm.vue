@@ -1,7 +1,7 @@
 <template>
-    <div class="mt-30 max-w-md w-full h-full mx-auto p-6 bg-white rounded-lg shadow-md">
+    <div class="mt-30 max-w-xl w-full h-full mx-auto p-6 bg-white rounded-lg shadow-md">
         <!-- Tabs -->
-        <h1 class="text-3xl font-extrabold text-orange-700 text-center mb-6 tracking-wide uppercase">
+        <h1 class="text-3xl font-extrabold text-orange-500 text-center mb-6 tracking-wide uppercase">
             MistMirror ERP
         </h1>
         <div class="flex mb-6 border-b border-gray-200">
