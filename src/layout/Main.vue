@@ -9,9 +9,9 @@
       width="220"
     >
       <!-- Logo -->
-      <div class="flex items-center justify-center h-16 bg-[#001529] text-white text-xl font-semibold tracking-wide">
+      <div class="flex items-center gap-2 justify-center h-16 bg-[#001529] text-white text-xl font-semibold tracking-wide">
         <img
-          class="h-8 mr-2"
+          class="h-8"
           src="../../public/logo.png"
         />
         <span v-if="!collapsed">MistMirror ERP</span>
